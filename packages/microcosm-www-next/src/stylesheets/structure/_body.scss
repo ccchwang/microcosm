@@ -1,52 +1,23 @@
 body {
   background-color: color(bg-1-bottom);
   position: relative;
-  transition: background-color 0.5s ease-out;
+  transition: transition(background-color);
 
-  &::before,
-  &::after {
+  &::before {  //top of half split bg
+    @include pseudo-elem;
     background-color: color(bg-1-top);
-    content: '';
-    position: fixed;
-    top: 0;
-    transition: inherit;
-    width: 100%;
-  }
-
-  &::before { //covers up under nav so we don't see items sliding under transparent nav
-    height: $nav-height;
-    z-index: 1;
-  }
-
-  &::after {  //top of half split bg color
     height: 281px;
+    top: 0;
     z-index: -1;
   }
 
-  &.bg-1 {
-    background-color: color(bg-1-bottom);
+  @for $i from 1 through $section-count {
+    &.bg-#{$i} {
+      background-color: color(bg-#{$i}-bottom);
 
-    &::before,
-    &::after {
-      background-color: color(bg-1-top);
-    }
-  }
-
-  &.bg-2 {
-    background-color: color(bg-2-bottom);
-
-    &::before,
-    &::after {
-      background-color: color(bg-2-top);
-    }
-  }
-
-  &.bg-3 {
-    background-color: color(bg-3-bottom);
-
-    &::before,
-    &::after {
-      background-color: color(bg-3-top);
+      &::before {
+        background-color: color(bg-#{$i}-top);
+      }
     }
   }
 }

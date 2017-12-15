@@ -2,11 +2,15 @@ $cta-border-height: 3px;
 $cta-bottom-padding: 6px;
 
 .footer {
-  background: rgba(#000, 0.3);
   align-items: center;
+  background: rgba(#000, 0.3);
+  bottom: 0;
   display: flex;
   height: $footer-height;
   justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 
   .wrapper {
     padding-bottom: $cta-border-height + $cta-bottom-padding + 3px;
