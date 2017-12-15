@@ -51,6 +51,11 @@ export default class IndexPage extends React.Component {
     this.setState({ microcosmView: !this.state.microcosmView })
   }
 
+  changeBgColor = (oldSection, newSection) => {
+    this.body.classList.remove(`bg-${oldSection}`)
+    this.body.classList.add(`bg-${newSection}`)
+  }
+
   render() {
     let sectionData = data[this.state.currentSection]
     let text = this.state.microcosmView
