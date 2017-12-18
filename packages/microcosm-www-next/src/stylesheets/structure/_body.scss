@@ -1,27 +1,25 @@
-.bg-color {
+body {
+  background-color: color(bg-1-bottom);
   transition: transition(background-color);
 
   &::before {  //top of half split bg
+    background-color: color(bg-1-top);
     content: '';
     height: 281px;
     position: fixed;
     top: 0;
     transition: transition(background-color);
     width: 100%;
+    z-index: -1;
   }
 
   @for $i from 1 through $section-count {
-    &.-section-#{$i} {
+    &.bg-color-#{$i} {
       background-color: color(bg-#{$i}-bottom);
 
       &::before {
         background-color: color(bg-#{$i}-top);
       }
     }
-  }
-
-  .wrapper {
-    position: relative;
-    z-index: 1;
   }
 }

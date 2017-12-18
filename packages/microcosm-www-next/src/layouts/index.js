@@ -23,7 +23,7 @@ const Footer = () => (
   <footer className="footer">
     <div className="wrapper">
       <Link to="https://www.viget.com/" className="viget-logo" target="_blank">
-        <VigetLogo fill="blue" />
+        <VigetLogo />
       </Link>
 
       <Link
@@ -49,7 +49,7 @@ const PageWrapper = ({ children }) => (
 
     <Navigation />
 
-    <main className="main">{children()}</main>
+    <main>{children()}</main>
 
     <Footer />
   </div>
