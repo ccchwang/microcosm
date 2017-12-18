@@ -1,18 +1,17 @@
-body {
-  background-color: color(bg-1-bottom);
-  position: relative;
+.bg-color {
   transition: transition(background-color);
 
   &::before {  //top of half split bg
-    @include pseudo-elem;
-    background-color: color(bg-1-top);
+    content: '';
     height: 281px;
+    position: fixed;
     top: 0;
-    z-index: -1;
+    transition: transition(background-color);
+    width: 100%;
   }
 
   @for $i from 1 through $section-count {
-    &.bg-#{$i} {
+    &.-section-#{$i} {
       background-color: color(bg-#{$i}-bottom);
 
       &::before {
@@ -20,5 +19,9 @@ body {
       }
     }
   }
-}
 
+  .wrapper {
+    position: relative;
+    z-index: 1;
+  }
+}
