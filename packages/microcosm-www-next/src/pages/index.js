@@ -77,7 +77,9 @@ export default class IndexPage extends React.Component {
                 className="section__content__heading"
                 dangerouslySetInnerHTML={{ __html: sectionData.heading }}
               />
-              <h3 className={'section__content__subheading -top' + browserClass}>
+              <h3
+                className={'section__content__subheading -top' + browserClass}
+              >
                 In
               </h3>
               <p
