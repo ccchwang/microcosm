@@ -83,6 +83,7 @@ $section-top-padding-desktop: $nav-height + 110px;
 
   .toggle-container & {
     @include breakpoint(medium-desktop-down) {
+      margin-right: 4%;
       padding-left: rem(40);
       position: relative;
 
@@ -91,10 +92,6 @@ $section-top-padding-desktop: $nav-height + 110px;
         position: absolute;
         left: 0;
       }
-    }
-
-    @media screen and (min-width: 577px) and (max-width: 1279px) {
-      margin-right: 4%;
     }
 
     @include breakpoint(large-desktop-up) {
