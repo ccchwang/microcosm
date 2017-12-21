@@ -72,28 +72,31 @@ export default class IndexPage extends React.Component {
       <div className="wrapper">
         <section className="section">
           <div className="section__content">
-            <h2
-              className="section__content__heading"
-              dangerouslySetInnerHTML={{ __html: sectionData.heading }}
-            />
+            <div className="text-container">
+              <h2
+                className="section__content__heading"
+                dangerouslySetInnerHTML={{ __html: sectionData.heading }}
+              />
+              <h3 className={'section__content__subheading -top' + browserClass}>
+                In
+              </h3>
+              <p
+                className="section__content__text"
+                dangerouslySetInnerHTML={{ __html: text }}
+              />
+            </div>
 
-            <h3 className={'section__content__subheading -top' + browserClass}>
-              In
-            </h3>
-            <p
-              className="section__content__text"
-              dangerouslySetInnerHTML={{ __html: text }}
-            />
-
-            <h3
-              className={'section__content__subheading -bottom' + browserClass}
-            >
-              Meanwhile, in
-            </h3>
-            <button
-              onClick={this.switchView}
-              className={'section__browser-btn' + browserClass}
-            />
+            <div className="toggle-container">
+              <h3
+                className={'section__content__subheading -bottom' + browserClass}
+              >
+                Meanwhile, in
+              </h3>
+              <button
+                onClick={this.switchView}
+                className={'section__toggle-btn' + browserClass}
+              />
+            </div>
           </div>
 
           <div className="section__graphic">

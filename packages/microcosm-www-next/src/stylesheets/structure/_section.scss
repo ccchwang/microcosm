@@ -1,4 +1,4 @@
-$section-top-padding: 116px;
+$section-top-padding: 125px;
 
 .section {
   padding-top: $section-top-padding;
@@ -8,6 +8,8 @@ $section-top-padding: 116px;
     justify-content: space-between;
   }
 }
+
+// CONTENT
 
 .section__content {
   height: 100%;
@@ -20,37 +22,71 @@ $section-top-padding: 116px;
   }
 }
 
-.section__graphic {
-  @include breakpoint(large-desktop-up) {
-    flex-basis: 600px;
+// CONTENT - containers
+
+.text-container {
+  margin: 0 auto rem(50);
+  max-width: 550px;
+  padding-left: rem(40);
+}
+
+.toggle-container {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: rem(18);
+  justify-content: center;
+  left: 0;
+  margin-bottom: rem(30);
+  padding: 0 rem(20);
+  position: fixed;
+  width: 100%;
+
+  .section__content__subheading {
+    @include breakpoint(medium-desktop-down) {
+      padding-left: rem(40);
+      position: relative;
+
+      &::before {
+        content: url('../images/arrow.svg');
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    @media screen and (min-width: 577px) and (max-width: 1279px) {
+      margin-right: 4%;
+    }
   }
 }
 
-.section__graphic__figure {
-  width: 600px;
-  height: 600px;
-  background-color: white;
-  border: 1px solid black;
-  margin-bottom: 25vh;
-}
-
-
+// CONTENT - elements
 
 .section__content__heading {
   font-size: rem(30);
+  margin-bottom: rem(40);
+  position: relative;
 
   span {
     @include font-family-bold;
-    display: block;
     font-size: rem(14);
-    margin-bottom: rem(5);
+    left: rem(-40);
+    position: absolute;
+    top: 0.35em;
+
+
+    @include breakpoint(large-desktop-up) {
+      display: block;
+      margin-bottom: rem(5);
+    }
   }
 }
 
 .section__content__subheading {
   @include font-family-medium;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  margin: rem(12) 0;
 
   &.-top {
     &::after {
@@ -82,9 +118,12 @@ $section-top-padding: 116px;
   line-height: rem(27);
 }
 
+.section__toggle-btn {
+  border-radius: 10px;
+  height: 57px;
+  text-transform: uppercase;
+  width: 217px;
 
-
-.section__browser-btn {
   &::before {
     content: 'Browser View';
   }
@@ -94,4 +133,23 @@ $section-top-padding: 116px;
       content: 'Microcosm View';
     }
   }
+}
+
+
+// GRAPHIC
+
+.section__graphic {
+  @include breakpoint(large-desktop-up) {
+    flex-basis: 600px;
+  }
+}
+
+.section__graphic__figure {
+  height: 100%;
+  margin: 0 auto 50vh;
+  max-height: 600px;
+  max-width: 600px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
 }

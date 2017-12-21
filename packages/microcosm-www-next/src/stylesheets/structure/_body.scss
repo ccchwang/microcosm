@@ -5,7 +5,7 @@ body {
   &::before {  //top of half split bg
     background-color: color(bg-1-top);
     content: '';
-    height: 281px;
+    height: 40vh;
     position: fixed;
     top: 0;
     transition: transition(background-color);
