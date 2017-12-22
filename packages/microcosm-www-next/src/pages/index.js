@@ -120,8 +120,8 @@ export default class IndexPage extends React.Component {
           </div>
 
           <div className="section__graphic">
-            {this.sections.map(el => (
-              <Graphic key={el} section={el} graphicUrl={graphicUrl} />
+            {this.sections.map(num => (
+              <Graphic key={num} section={num} graphicUrl={graphicUrl} />
             ))}
           </div>
         </section>
