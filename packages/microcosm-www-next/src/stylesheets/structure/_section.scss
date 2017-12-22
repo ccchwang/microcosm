@@ -16,6 +16,7 @@ $section-top-padding-desktop: $nav-height + 110px;
 .section__content {
   height: 100%;
   position: sticky;
+  position: -webkit-sticky;
   top: $section-top-padding-mobile;
 
   @include breakpoint(large-desktop-up) {
