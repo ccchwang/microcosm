@@ -32,7 +32,7 @@ export default class IndexPage extends React.Component {
   }
 
   createSectionsArray() {
-    let arr = [];
+    let arr = []
 
     for (let i = 0; i < this.state.numSections; i++) {
       arr.push(i + 1)
@@ -106,7 +106,9 @@ export default class IndexPage extends React.Component {
 
             <div className="toggle-container">
               <h3
-                className={'section__content__subheading -bottom' + browserClass}
+                className={
+                  'section__content__subheading -bottom' + browserClass
+                }
               >
                 Meanwhile, in
               </h3>
@@ -118,10 +120,9 @@ export default class IndexPage extends React.Component {
           </div>
 
           <div className="section__graphic">
-            { this.sections.map(el => (
-                <Graphic key={el} section={el} graphicUrl={graphicUrl} />
-              ))
-            }
+            {this.sections.map(el => (
+              <Graphic key={el} section={el} graphicUrl={graphicUrl} />
+            ))}
           </div>
         </section>
       </div>
